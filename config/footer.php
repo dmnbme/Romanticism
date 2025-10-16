@@ -18,7 +18,7 @@
 
       <br>
       <span class="title">
-        &copy;<?php echo date("Y"); ?> <?php $this->options->title(); ?>
+        &copy; 2019 - <?php echo date("Y"); ?> <?php $this->options->title(); ?>
         <br>
         <?php if($this->options->AKAROMfootericp):?>
             <?php echo'<br>';
