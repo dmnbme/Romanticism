@@ -263,15 +263,29 @@ data-bg="
 
 <?php endif; ?>
 <!--上下翻页-->
-<?php if (ceil($this->getTotal() / $this->parameter->pageSize) != '1'): ?>
+<?php $totalPages = $this->getTotalPage(); ?>
+<?php if ($totalPages > 1): ?>
+	<?php
+    $currentPage = $this->getCurrentPage();
+    $pageRow = array_merge($this->getPageRow(), ['page' => '{page}']);
+    $routeKey = $this->parameter->type . (false === strpos($this->parameter->type, '_page') ? '_page' : null);
+    $pageTemplate = \Typecho\Router::url($routeKey, $pageRow, $this->options->index);
+  ?>
 	<div class="mdui-text-center">
 	  <p>
-	    <h4 class="title mdui-text-center outlineborder blur akarom-alter-button">
+	    <h4 class="mdui-text-center outlineborder blur akarom-alter-button">
         <?php $this->pageLink('&nbsp;&nbsp;&nbsp;&nbsp;上一页&nbsp;&nbsp;&nbsp;&nbsp;'); ?>
-        <?php $this->pageLink('&nbsp;&nbsp;&nbsp;&nbsp;下一页&nbsp;&nbsp;&nbsp;&nbsp;','next'); ?>
+        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+          <?php if ($i == $currentPage): ?>
+            <span style="opacity:.5;">&nbsp;&nbsp;&nbsp;<?php echo $i; ?>&nbsp;&nbsp;&nbsp;</span>
+          <?php else: ?>
+            <a href="<?php echo str_replace(['{page}', '%7Bpage%7D'], $i, $pageTemplate); ?>">&nbsp;&nbsp;&nbsp;<?php echo $i; ?>&nbsp;&nbsp;&nbsp;</a>
+          <?php endif; ?>
+        <?php endfor; ?>
+        <?php $this->pageLink('&nbsp;&nbsp;&nbsp;&nbsp;下一页&nbsp;&nbsp;&nbsp;&nbsp;', 'next'); ?>
       </h4>
 	  </p>
-</div>
+	</div>
 
 <?php endif; ?>
 <!--内容结束-->
