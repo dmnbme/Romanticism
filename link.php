@@ -116,18 +116,18 @@ echo $friendlink;
      <br><br>
    <?php endif; ?>
      <b>我的信息</b><br>
-     博客标志：<?php $this->options->AKAROMlogoUrl(); ?><br>
+     头像：<?php $this->options->AKAROMlogoUrl(); ?><br>
      地址：<?php empty($this->options->AKAROMLinkstermsUrl) ? $this->options->siteUrl() : $this->options->AKAROMLinkstermsUrl(); ?><br>
      标题：<?php $this->options->title() ?><br>
-     描述：<?php $this->options->AKAROMindexslogen(); ?><br><br>
+     描述：<?php $this->options->description(); ?><br><br>
      <b>交换的格式</b><br>
-     [icon]网站标志或头像的图片链接<br>
-     [link]你的网站网址<br>
-     [name]你的网站标题<br>
-     [desc]简单介绍一下你的网站吧<br>
+     [icon] 网站 logo 或头像的图片链接<br>
+     [link] 你的网站网址<br>
+     [name] 你的网站标题<br>
+     [desc] 简单介绍一下你的网站吧<br>
      [end]
   </blockquote>
-  <b>请通过下面的评论按照格式交换友链呀！</b>
+  <b>请通过下面的评论按照格式交换友链吧</b>
   <br> <br>
 
 </div>
