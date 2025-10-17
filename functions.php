@@ -153,7 +153,7 @@ function themeFields($layout) { //文章自定义字段功能
             NULL,
             NULL,
             _t('页面图标'),
-            _t('输入 <a href="https://www.mdui.org/docs/material_icon" target="_blank">Material Icons 图标名</a>,将显示在侧拉菜单。如留空将使用默认图标。')
+            _t('输入 <a href="https://www.mdui.org/docs/material_icon" target="_blank">Material Icons 图标名</a>，将显示在侧拉菜单。如留空将使用默认图标。')
         );
         $layout->addItem($AKAROMarticleicon);
     }
