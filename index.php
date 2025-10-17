@@ -63,7 +63,7 @@
             ), '', ''); ?>
             <?php else: ?>
             <?php
-            echo $this->options->AKAROMindexslogen();
+            echo $this->options->description();
              ?>
             <?php endif; ?>
       </h1>
