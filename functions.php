@@ -430,7 +430,7 @@ function generateTOC($content) {
             
             // 添加目录项
             $toc .= '<li class="toc-item toc-level-' . $level . '">
-                        <a href="#' . $id . '">#' . $title . '</a>
+                        <a href="#' . $id . '">#&nbsp;' . $title . '</a>
                      </li>';
         }
         
